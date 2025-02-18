@@ -1,3 +1,4 @@
+import React from "react";
 import TreeTextIcon from "./Icons/TreeTextIcon";
 
 function PrimitiveValue({
@@ -5,14 +6,14 @@ function PrimitiveValue({
   value,
 }: {
   objectKey: string | number;
-  value: any;
+  value: unknown;
 }) {
   return (
     <div className="flex ml-2 items-center">
       <TreeTextIcon text={typeof value === "number" ? "#" : "$"} /> {objectKey}:
       <span className="text-green-600 ml-2 ">
         {'"'}
-        {value}
+        {React.isValidElement(value) && value}
         {'"'}
       </span>
     </div>

@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useCallback, useState } from "react";
 
 function useToggleSwitch(defaultIsExpanded?: boolean): {
   isEnabled: boolean;
@@ -10,10 +10,10 @@ function useToggleSwitch(defaultIsExpanded?: boolean): {
   const [isEnabled, setIsEnabled] = useState(!!defaultIsExpanded);
   const [expandChild, setIsExpandChild] = useState(!!defaultIsExpanded);
 
-  function toggle(val?: boolean): void {
+  const toggle = useCallback((val?: boolean): void => {
     if (typeof val === "boolean") setIsEnabled(val);
     else setIsEnabled((prev) => !prev);
-  }
+  }, []);
 
   return {
     isEnabled,

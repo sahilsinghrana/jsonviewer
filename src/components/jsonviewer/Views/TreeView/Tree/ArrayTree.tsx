@@ -34,7 +34,7 @@ function ArrayTree({
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [setIsExpandChild, toggleExpanded]);
 
   return (
     <div className=" ml-2">
@@ -44,7 +44,7 @@ function ArrayTree({
         {objectKey} :{" "}
       </div>
       {isExpanded &&
-        array.map(([k, v], i) => (
+        array.map(([k, v]: [string, unknown], i) => (
           <Tree
             key={k}
             objectKey={i}

@@ -14,6 +14,8 @@ function ObjectTree({
   defaultIsExpanded,
 }: {
   defaultIsExpanded?: boolean;
+  objectKey: string;
+  object: object;
 }) {
   const {
     isEnabled: isExpanded,
