@@ -1,12 +1,17 @@
-import { ALargeSmall, Braces, Brackets, Hash } from "lucide-react";
+import Tree from "./Tree";
 import useViewerStore from "../../store/viewerStore";
+import { emitCollapseAll, emitExpandAll } from "./tvEventBus";
+import UtilityButton from "@/components/ui/custom/utilitybtn";
+
+import "./index.css";
 
 function TreeView() {
   const parsedJson = useViewerStore((state) => state.json.parsed);
   return (
     <div>
-      Viewer
-      <div className="p-2 outline-2 outline outline-gray-500 m-2 text-sm min-h-80">
+      <UtilityButton onClick={emitCollapseAll}>Collapse All</UtilityButton>
+      <UtilityButton onClick={emitExpandAll}>Expand All</UtilityButton>
+      <div className="p-2 pb-6 rounded-md outline-2 outline outline-gray-500 m-2 text-sm h-[82dvh]  overflow-auto max-h-[82dvh]  w-[99%] font-mono leading-normal  whitespace-pre break-normal [tab-size:2] treeView ">
         <Tree objectKey="JSON" value={parsedJson} />
       </div>
     </div>
@@ -14,37 +19,3 @@ function TreeView() {
 }
 
 export default TreeView;
-
-function Tree({ objectKey, value }: { objectKey: string; value: any }) {
-  if (typeof value === "object") {
-    if (Array.isArray(value)) {
-      return (
-        <details className="flex ml-2">
-          <summary className="cursor-pointer ">{objectKey}</summary>
-          {value.map(([k, v]) => (
-            <Tree key={k} objectKey={k} value={v} />
-          ))}
-        </details>
-      );
-    }
-    return (
-      <details className="flex ml-2">
-        <summary className="cursor-pointer ">{objectKey}</summary>
-        {Object.entries(value).map(([k, v]) => (
-          <Tree key={k} objectKey={k} value={v} />
-        ))}
-      </details>
-    );
-  }
-  return (
-    <div className="flex ml-2 items-center">
-      {objectKey}:
-      {/* {typeof value === "number" ? <Hash /> : <ALargeSmall />} */}
-      <span className="text-green-600 ml-2 ">
-        {'"'}
-        {value}
-        {'"'}
-      </span>
-    </div>
-  );
-}

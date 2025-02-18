@@ -26,6 +26,27 @@ interface IViewerView {
   openTextView: () => void;
 }
 
+interface ISettings {
+  jsonViewer: {
+    font: string;
+    fontSize: number;
+    padding: number;
+  };
+  textView: {
+    format: {
+      spaces: number;
+      jsonVersion: string;
+    };
+  };
+  icons: {
+    expand: string;
+    array: string;
+    string: string;
+    number: string;
+    object: string;
+  };
+}
+
 export interface IViewerState extends IViewerView {
   format: IFormat;
   json: IJson;

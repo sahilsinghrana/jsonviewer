@@ -12,7 +12,7 @@ function EditorArea() {
         onChange={(e) => {
           setValue(e.target.value);
         }}
-        className="min-h-[75dvh] w-[99%] font-mono text-sm leading-normal overflow-x-auto whitespace-pre break-normal [tab-size:2]"
+        className="p-2 pb-6 outline-2 outline outline-gray-500 m-2 text-sm h-[82dvh]  overflow-auto max-h-[82dvh]  w-[99%] font-mono leading-normal whitespace-pre break-normal [tab-size:2]"
       />
     </div>
   );

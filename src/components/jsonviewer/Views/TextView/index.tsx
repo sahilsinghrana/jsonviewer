@@ -3,7 +3,7 @@ import UtilitiesBar from "./UtilitiesBar";
 
 function TextView() {
   return (
-    <div>
+    <div className="">
       <UtilitiesBar />
       <EditorArea />
     </div>
