@@ -44,7 +44,7 @@ function ArrayTree({
         {objectKey} :{" "}
       </div>
       {isExpanded &&
-        array.map(([k, v]: [string, unknown], i) => (
+        array.map(([k, v]: [string, unknown], i: number) => (
           <Tree
             key={k}
             objectKey={i}

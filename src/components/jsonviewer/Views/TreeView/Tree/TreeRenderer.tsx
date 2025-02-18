@@ -3,7 +3,7 @@ import ObjectTree from "./ObjectTree";
 import PrimitiveValue from "./PrimitiveValue";
 
 function TreeRenderer({ objectKey, value, defaultIsExpanded }) {
-  if (typeof value === "object") {
+  if (typeof value === "object" && value !== null) {
     if (Array.isArray(value)) {
       return (
         <ArrayTree

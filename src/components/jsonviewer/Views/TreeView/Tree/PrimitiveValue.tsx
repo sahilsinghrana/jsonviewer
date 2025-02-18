@@ -6,15 +6,21 @@ function PrimitiveValue({
   value,
 }: {
   objectKey: string | number;
-  value: unknown;
+  value: string | number | null;
 }) {
   return (
     <div className="flex ml-2 items-center">
       <TreeTextIcon text={typeof value === "number" ? "#" : "$"} /> {objectKey}:
       <span className="text-green-600 ml-2 ">
-        {'"'}
-        {React.isValidElement(value) && value}
-        {'"'}
+        {value === null ? (
+          "null"
+        ) : (
+          <>
+            {'"'}
+            {value}
+            {'"'}
+          </>
+        )}
       </span>
     </div>
   );
