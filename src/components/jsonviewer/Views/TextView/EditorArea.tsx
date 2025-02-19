@@ -1,9 +1,13 @@
 import { Textarea } from "@/components/ui/textarea";
 import useViewerStore from "../../store/viewerStore";
+import {
+  jsonStringValueSelector,
+  onJsonStringChangeSelector,
+} from "../../store/selectors/viewerSelectors";
 
 function EditorArea() {
-  const value = useViewerStore((state) => state.json.string);
-  const setValue = useViewerStore((state) => state.json.onStringChange);
+  const value = useViewerStore(jsonStringValueSelector);
+  const setValue = useViewerStore(onJsonStringChangeSelector);
 
   return (
     <div className="w-full flex justify-center">
@@ -12,6 +16,10 @@ function EditorArea() {
         onChange={(e) => {
           setValue(e.target.value);
         }}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck="false"
         className="p-2 pb-6 outline-2 outline outline-gray-500 m-2 text-sm h-[82dvh]  overflow-auto max-h-[82dvh]  w-[99%] font-mono leading-normal whitespace-pre break-normal [tab-size:2]"
       />
     </div>

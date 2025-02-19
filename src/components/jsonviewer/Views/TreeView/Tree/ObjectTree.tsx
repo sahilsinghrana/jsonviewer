@@ -7,6 +7,7 @@ import Tree from "./index";
 import TreeTextIcon from "./Icons/TreeTextIcon";
 import useToggleSwitch from "../useToggleSwitch";
 import { subscribeTVTreeEvents, TV_EVENTS_TYPES } from "../tvEventBus";
+import Itemkey from "./ItemKey";
 
 function ObjectTree({
   objectKey,
@@ -39,19 +40,15 @@ function ObjectTree({
 
   return (
     <div className={clsx("ml-2")}>
-      <div className="flex items-center">
-        <ExpandToggleBtn
-          isExpanded={isExpanded}
-          onClick={() => {
-            toggleExpanded();
-            setIsExpandChild(false);
-          }}
-        />
-        <div>
-          <TreeTextIcon text="{}" />
-          {objectKey}
-        </div>
-      </div>
+      <Itemkey
+        objectKey={objectKey}
+        Icon={<TreeTextIcon text="{}" />}
+        isExpanded={isExpanded}
+        toggleExpanded={() => {
+          toggleExpanded();
+          setIsExpandChild(false);
+        }}
+      />
       {isExpanded &&
         Object.entries(object).map(([k, v]) => (
           <Tree

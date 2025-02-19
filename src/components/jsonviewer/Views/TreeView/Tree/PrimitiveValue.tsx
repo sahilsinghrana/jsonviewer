@@ -1,5 +1,6 @@
 import React from "react";
 import TreeTextIcon from "./Icons/TreeTextIcon";
+import Itemkey from "./ItemKey";
 
 function PrimitiveValue({
   objectKey,
@@ -10,7 +11,11 @@ function PrimitiveValue({
 }) {
   return (
     <div className="flex ml-2 items-center">
-      <TreeTextIcon text={typeof value === "number" ? "#" : "$"} /> {objectKey}:
+      <Itemkey
+        objectKey={objectKey}
+        Icon={<TreeTextIcon text={typeof value === "number" ? "#" : "$"} />}
+      />
+      :
       <span className="text-green-600 ml-2 ">
         {value === null ? (
           "null"

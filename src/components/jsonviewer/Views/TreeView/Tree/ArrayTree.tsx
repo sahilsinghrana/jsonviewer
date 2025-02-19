@@ -6,6 +6,7 @@ import Tree from "./index";
 import TreeTextIcon from "./Icons/TreeTextIcon";
 import useToggleSwitch from "../useToggleSwitch";
 import { subscribeTVTreeEvents, TV_EVENTS_TYPES } from "../tvEventBus";
+import Itemkey from "./ItemKey";
 
 function ArrayTree({
   objectKey,
@@ -38,15 +39,20 @@ function ArrayTree({
 
   return (
     <div className=" ml-2">
-      <div className="flex ">
-        <ExpandToggleBtn isExpanded={isExpanded} onClick={toggleExpanded} />
-        <TreeTextIcon text="[]" />
-        {objectKey} :{" "}
-      </div>
+      <Itemkey
+        objectKey={objectKey}
+        Icon={<TreeTextIcon text="[]" />}
+        isExpanded={isExpanded}
+        toggleExpanded={() => {
+          toggleExpanded();
+          setIsExpandChild(false);
+        }}
+      />
+
       {isExpanded &&
-        array.map(([k, v]: [string, unknown], i: number) => (
+        array.map((v: unknown, i: number) => (
           <Tree
-            key={k}
+            key={i}
             objectKey={i}
             value={v}
             defaultIsExpanded={expandChild}

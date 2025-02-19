@@ -1,6 +1,5 @@
 import JsonViewer from "@/components/jsonviewer";
 import { GithubIcon } from "lucide-react";
-// import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
@@ -10,11 +9,10 @@ export default function Home() {
       <div>
         <p
           role="alert"
-          className="flex items-center float-right mx-2 p12 rounded-sm text-white bg-red-800 w-fit"
+          className="flex items-center float-right mx-2 p12 rounded-sm text-white bg-slate-950-800 w-fit"
         >
-          <span className="mx-1">In Development</span>
           <a
-            className="mx-1 bg-red-950 p-1 hover:bg-black"
+            className="mx-1 rounded-full p-1 hover:bg-slate-500 dark:bg-slate-800 bg-slate-900"
             href="https://github.com/sahilsinghrana/jsonviewer/"
             target="_blank"
           >
