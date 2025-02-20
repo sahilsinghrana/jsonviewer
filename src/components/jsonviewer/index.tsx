@@ -5,7 +5,7 @@ import ViewToggleBar from "./Views/ViewToggleBar";
 function JsonViewer() {
   return (
     <div className="">
-      <div className="absolute top-2 max-md:bottom-0 max-md:top-auto  right-12">
+      <div className="absolute top-2 right-14  max-md:bottom-3 z-10 max-md:left-2 max-md:right-auto max-md:top-auto ">
         <LogoWithText />
       </div>
       <ViewToggleBar />

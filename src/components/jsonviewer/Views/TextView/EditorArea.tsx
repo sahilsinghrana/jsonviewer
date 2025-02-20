@@ -20,7 +20,7 @@ function EditorArea() {
         autoCorrect="off"
         autoCapitalize="off"
         spellCheck="false"
-        className="p-2 pb-6 outline-2 outline outline-gray-500 m-2 text-sm h-[80dvh]  overflow-auto max-h-[82dvh]  w-[99%] font-mono leading-normal whitespace-pre break-normal [tab-size:2]"
+        className="p-2 pb-6 outline-2 outline outline-gray-500 m-2 text-sm h-[75dvh]  overflow-auto max-h-[75dvh] sm:max-h-[78dvh]  w-[99%] font-mono leading-normal whitespace-pre break-normal [tab-size:2]"
       />
     </div>
   );

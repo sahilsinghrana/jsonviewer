@@ -16,7 +16,7 @@ function ViewerToggleButton({
       size="sm"
       variant="default"
       onClick={onClick}
-      className="p-0 w-28 h-6 font-semibold uppercase text-xs m-0  rounded-none disabled:opacity-95 opacity-40"
+      className="p-0 rounded-none font-raleway hover:bg-slate-400 w-28 h-6 font-bold uppercase text-xs disabled:opacity-50 disabled:border-b-2 border-orange-500 opacity-95"
     >
       {children}
     </Button>

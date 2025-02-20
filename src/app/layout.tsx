@@ -1,18 +1,27 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 
-import Script from "next/script";
-
+import { Toaster } from "@/components/ui/sonner";
 import ThemeToggle from "@/components/ThemeToggle";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Toaster } from "@/components/ui/sonner";
 
 import "./globals.css";
 
 export const metadata: Metadata = {
   manifest: "/manifest.json",
   title: "JSON Viewer",
-  description: "JSON Viewer with Dark mode.",
-  keywords: ["json", "viewer", "dark mode", "developer tool", "Sahil", "Rana"],
+  description:
+    "JSON Viewer and json formatter with Dark mode. Format or parse Json.",
+  keywords: [
+    "json",
+    "viewer",
+    "dark",
+    "developer",
+    "Sahil",
+    "Rana",
+    "Formatter",
+    "Parser",
+  ],
   authors: [{ name: "Sahil Rana", url: "https://jsonviewer.sahilrana.in" }],
   robots: {
     index: true,
@@ -37,7 +46,7 @@ export const metadata: Metadata = {
       },
     ],
     locale: "en_US",
-    type: "website", // Open Graph type; for web apps, additional JSON‑LD is provided.
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
@@ -63,7 +72,7 @@ export default function RootLayout({
               "@type": "WebApplication",
               name: "JSON Viewer",
               url: "https://jsonviewer.sahilrana.in",
-              description: "JSON Viewer with Dark mode.",
+              description: "JSON Viewer and formatter with Dark mode.",
               applicationCategory: "Utility",
               operatingSystem: "All",
               browserRequirements: "HTML5 compatible browser",
@@ -84,6 +93,16 @@ export default function RootLayout({
             <Toaster position="top-center" richColors closeButton />
             <ThemeToggle />
             {children}
+            <footer className="fixed bottom-0 w-full bg-zinc-400/50 text-black dark:text-slate-200/50 dark:bg-black text-center font-raleway font-light text-xs py-1">
+              Made with 💞 By{" "}
+              <a
+                className="hover:underline"
+                href="https://sahilrana.in"
+                target="_blank"
+              >
+                Sahil Rana
+              </a>
+            </footer>
           </>
         </ThemeProvider>
       </body>

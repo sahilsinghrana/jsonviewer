@@ -9,10 +9,10 @@ export default function Home() {
       <div>
         <p
           role="alert"
-          className="flex items-center float-right mx-2 p12 rounded-sm text-white bg-slate-950-800 w-fit"
+          className="flex items-center float-right p-2 rounded-md text-white/40 bg-slate-950/10 w-fit"
         >
           <a
-            className="mx-1 rounded-full p-1 hover:bg-slate-500 dark:bg-slate-800 bg-slate-900"
+            className="mx-1 rounded-full p-1 dark:bg-slate-900 hover:text-white/80 bg-slate-900"
             href="https://github.com/sahilsinghrana/jsonviewer/"
             target="_blank"
           >

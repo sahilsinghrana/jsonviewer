@@ -10,7 +10,7 @@ function Tree({
   defaultIsExpanded?: boolean;
 }) {
   return (
-    <div className="ml-1">
+    <div className="ml-1 border-l  hover:border-l transition hover:border-white/30 rounded">
       <TreeRenderer
         objectKey={objectKey}
         value={value}

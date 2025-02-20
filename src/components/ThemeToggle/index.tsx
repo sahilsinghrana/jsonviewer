@@ -22,7 +22,7 @@ function ThemeToggle() {
           <Button
             variant="outline"
             size="icon"
-            className="absolute right-2 top-2 rounded-full h-10 w-10"
+            className="absolute right-2 top-3 border-2 border-orange-800/20 dark:border-orange-400/10 rounded-full h-9 w-h-9"
             onClick={() =>
               setTheme(
                 theme === "dark"
