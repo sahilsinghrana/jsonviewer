@@ -9,18 +9,27 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   manifest: "/manifest.json",
-  title: "JSON Viewer",
+  title: "Online JSON Viewer | Format Json | Prettify JSON | Dark mode",
   description:
-    "JSON Viewer and json formatter with Dark mode. Format or parse Json.",
+    "JSON Viewer and JSON formatter with Dark mode. View, Prettify, Beautify, Format or remove spaces from Json.",
   keywords: [
     "json",
     "viewer",
+    "Tree",
     "dark",
     "developer",
     "Sahil",
     "Rana",
     "Formatter",
     "Parser",
+    "JSON Viewer",
+    "JSON Formatter",
+    "Pretty JSON",
+    "Prettify JSON",
+    "Format",
+    "Beautify",
+    "remove space",
+    "View",
   ],
   authors: [{ name: "Sahil Rana", url: "https://jsonviewer.sahilrana.in" }],
   robots: {
@@ -34,7 +43,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "JSON Viewer",
-    description: "JSON Viewer with Dark mode.",
+    description:
+      "JSON Viewer and JSON formatter with Dark mode. View, Prettify, Beautify, Format or remove spaces from Json.",
     url: "https://jsonviewer.sahilrana.in",
     siteName: "JSON Viewer",
     images: [
@@ -70,9 +80,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              name: "JSON Viewer",
+              name: "Online JSON Formatter and Viewer",
               url: "https://jsonviewer.sahilrana.in",
-              description: "JSON Viewer and formatter with Dark mode.",
+              description:
+                "JSON Viewer and JSON formatter with Dark mode. View, Prettify, Beautify, Format or remove spaces from Json.",
               applicationCategory: "Utility",
               operatingSystem: "All",
               browserRequirements: "HTML5 compatible browser",
@@ -81,6 +92,15 @@ export default function RootLayout({
             }),
           }}
         />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-HCV9XTH1KH" />
+        <Script id="show-banner">
+          {` window.dataLayer = window.dataLayer || [];
+           function gtag(){dataLayer.push(arguments);}
+           gtag('js', new Date());
+         
+           gtag('config', 'G-HCV9XTH1KH');`}
+        </Script>
+        <link rel="canonical" href="https://jsonviewer.sahilrana.in" />
       </head>
       <body className="antialiased">
         <ThemeProvider
@@ -93,27 +113,24 @@ export default function RootLayout({
             <Toaster position="top-center" richColors closeButton />
             <ThemeToggle />
             {children}
-            <footer className="fixed bottom-0 w-full bg-zinc-400/50 text-black dark:text-slate-200/50 dark:bg-black text-center font-raleway font-light text-xs py-1">
-              Made with 💞 By{" "}
-              <a
-                className="hover:underline"
-                href="https://sahilrana.in"
-                target="_blank"
-              >
-                Sahil Rana
-              </a>
+            <p aria-hidden className="hidden">
+              Format, View, prettify or beautify json
+            </p>
+            <footer className="fixed bottom-0 w-full bg-zinc-400/50 text-black dark:text-slate-200/60 dark:bg-black text-center font-raleway font-light text-xs py-1">
+              <div>
+                Made with 💞 By{" "}
+                <a
+                  className="hover:underline"
+                  href="https://sahilrana.in"
+                  target="_blank"
+                >
+                  Sahil Rana
+                </a>
+              </div>
             </footer>
           </>
         </ThemeProvider>
       </body>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-HCV9XTH1KH" />
-      <Script id="show-banner">
-        {` window.dataLayer = window.dataLayer || [];
-           function gtag(){dataLayer.push(arguments);}
-           gtag('js', new Date());
-         
-           gtag('config', 'G-HCV9XTH1KH');`}
-      </Script>
     </html>
   );
 }
